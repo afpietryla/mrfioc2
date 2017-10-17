@@ -140,3 +140,9 @@ file softEvt.template {
 pattern { SYS,      DEVICE     }
         {"$(SYS)", "$(DEVICE)" }
 }
+
+file evgSoftSeq.template {
+pattern { SYS,     DEVICE,      SEQNUM, NELM }
+        {"$(SYS)", "$(DEVICE)", 1,      2047 }
+        {"$(SYS)", "$(DEVICE)", 2,      2047 }
+}
