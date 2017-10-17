@@ -14,7 +14,7 @@ DBD += mrf.dbd
 
 # mrf.dbd will be made up from these files:
 mrf_DBD += base.dbd
-mrf_DBD += system.dbd
+#mrf_DBD += system.dbd
 
 mrf_DBD += evgInit.dbd
 
@@ -34,6 +34,10 @@ mrf_SRCS += mrf_registerRecordDeviceDriver.cpp
 
 # Build the main IOC entry point on workstation OSs.
 mrf_SRCS_DEFAULT += mrfMain.cpp
+
+# Add support from base/src/vxWorks if needed
+mrf_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
+
 
 ifneq ($(DEVIOCSTATS),)
 mrf_DBD += devIocStats.dbd
