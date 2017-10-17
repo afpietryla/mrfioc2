@@ -128,6 +128,15 @@ file "evr-cml.template"
 {"$(SYS)", "$(DEVICE)", 3,  40,   81880 }
 }
 
+file "evr-pulserMap.template"
+{pattern
+{ SYS,      DEVICE,     F,        PID,  ID, EVT}
+{"$(SYS)", "$(DEVICE)", "Trig",    0,   0,  "248"}
+{"$(SYS)", "$(DEVICE)", "Set",     0,   0,  "248"}
+{"$(SYS)", "$(DEVICE)", "Reset",   0,   0,  "248"}
+}
+
+
 file "evr-pulserMap-dbus.template"
 {pattern
 { SYS,      DEVICE,     ID}
@@ -141,7 +150,18 @@ file "evr-pulserMap-dbus.template"
 {"$(SYS)", "$(DEVICE)", 7}
 }
 
-file softEvt.template {
-pattern { SYS,      DEVICE     }
-        {"$(SYS)", "$(DEVICE)" }
+file "evr-softEvent.template" {
+pattern { SYS,      DEVICE,     EVT,    CODE   }
+        {"$(SYS)", "$(DEVICE)", "122",  "122"  }
+        {"$(SYS)", "$(DEVICE)", "124",  "124"  }
+        {"$(SYS)", "$(DEVICE)", "125",  "125"  }
+        {"$(SYS)", "$(DEVICE)", "126",  "126"  }
+        {"$(SYS)", "$(DEVICE)", "127",  "127"  }
+        {"$(SYS)", "$(DEVICE)", "248",  "248"  }
+}
+
+file "evr-delayModule.template" {
+pattern 
+{ SYS,      DEVICE,         SLOT    }
+{"$(SYS)",  "$(DEVICE)",    0       }
 }
