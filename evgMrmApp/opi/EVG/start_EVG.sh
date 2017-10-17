@@ -1,6 +1,9 @@
 #!/bin/bash
 set -o errexit
 
+QT_PATH="/home/phoebus/JBS/code/epicsqt/caqtdm-snap-020117/caQtDM_Binaries"
+export QT_PLUGIN_PATH=/home/phoebus/JBS/code/epicsqt/caqtdm-snap-020117/caQtDM_Binaries
+
 SYS=""
 DEVICE="EVG0"
 FF="VME-300"
@@ -60,4 +63,4 @@ if [ $FF != "VME" ] && [ $FF != "VME-300" ]; then
 fi
 
 macro="SYS=$SYS,DEVICE=$DEVICE,FF=$FF"
-caqtdm -$ATTACH -macro "$macro" G_EVG_main.ui &
+${QT_PATH}/caqtdm -$ATTACH -macro "$macro" G_EVG_main.ui &
